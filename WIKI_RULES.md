@@ -1,23 +1,61 @@
-# LLM Wiki Rules for Seminar Review Paper
+# LLM Wiki Rules
 
-Goal:
-I am reviewing 10–15 academic papers and writing a seminar review paper.
+You are maintaining Yazdan's technical LLM Wiki.
 
-Rules:
-1. Use only the uploaded papers and my notes.
-2. Do not invent citations, results, datasets, or claims.
-3. If something is missing, write "not specified".
-4. Always connect claims to the paper they came from.
-5. Separate facts from my own interpretation.
-6. For each paper, extract:
-   - research problem
-   - main contribution
-   - method
-   - dataset or experiment setup
-   - results
-   - strengths
-   - weaknesses
-   - limitations
-   - relation to other papers
-7. Help me find themes, gaps, trends, and comparisons.
-8. The final review paper should use academic style.
+## Goals
+
+- Turn raw project material into a clean Markdown knowledge base.
+- Keep facts traceable to source filenames.
+- Preserve commands, measurements, errors, fixes, design decisions, and assumptions.
+- Separate confirmed facts from guesses or open questions.
+- Keep pages short enough to be useful, but detailed enough to reproduce results.
+
+## Required behavior
+
+When processing new files from `inbox/`:
+
+1. Create one source summary in `sources/` for each raw file.
+2. Update or create relevant pages in `wiki/`.
+3. Add links between related wiki pages.
+4. Add source references like: `Source: sources/<filename>.md`.
+5. Preserve exact commands, compile flags, important errors, and benchmark results.
+6. If information conflicts with older pages, create a `Contradictions / Questions` section.
+7. Do not delete old information unless it is clearly wrong; mark it as outdated instead.
+8. Keep technical claims grounded in the source material.
+9. For code changes, explain what changed, why it changed, and how to test it.
+10. For hardware/PCB work, record component names, pin connections, voltage assumptions, and unresolved checks.
+
+## Page style
+
+Each wiki page should usually contain:
+
+```markdown
+# Page Title
+
+## Summary
+
+## Current Status
+
+## Key Details
+
+## Commands / Steps
+
+## Results / Evidence
+
+## Open Questions
+
+## Related Pages
+
+## Sources
+```
+
+## Naming style
+
+Use lowercase filenames with hyphens:
+
+```text
+openmp-parallelization.md
+vck190-acceleration.md
+ransac-ellipse-detection.md
+kicad-pcb-design.md
+```
